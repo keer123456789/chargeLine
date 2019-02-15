@@ -1,0 +1,50 @@
+2019-02-15 11:49:02.304  WARN 15600 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/keer/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/keer/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2019-02-15 11:49:02.315  INFO 15600 --- [main] c.t.c.ChargelineApplicationTests         : Starting ChargelineApplicationTests on DESKTOP-VM20JAI with PID 15600 (started by keer in E:\code\java\chargeline)
+2019-02-15 11:49:02.316  INFO 15600 --- [main] c.t.c.ChargelineApplicationTests         : No active profile set, falling back to default profiles: default
+2019-02-15 11:49:02.895  INFO 15600 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.web3_url
+2019-02-15 11:49:02.895  INFO 15600 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.ChargingLine_address
+2019-02-15 11:49:03.264  INFO 15600 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-15 11:49:03.437  INFO 15600 --- [main] c.t.c.ChargelineApplicationTests         : Started ChargelineApplicationTests in 1.282 seconds (JVM running for 2.006)
+2019-02-15 11:49:03.584  INFO 15600 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-15 11:52:00.248  WARN 17660 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/keer/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/keer/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2019-02-15 11:52:00.260  INFO 17660 --- [main] c.t.c.ChargelineApplicationTests         : Starting ChargelineApplicationTests on DESKTOP-VM20JAI with PID 17660 (started by keer in E:\code\java\chargeline)
+2019-02-15 11:52:00.261  INFO 17660 --- [main] c.t.c.ChargelineApplicationTests         : No active profile set, falling back to default profiles: default
+2019-02-15 11:52:00.818  INFO 17660 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.web3_url
+2019-02-15 11:52:00.818  INFO 17660 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.ChargingLine_address
+2019-02-15 11:52:01.198  INFO 17660 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-15 11:52:01.382  INFO 17660 --- [main] c.t.c.ChargelineApplicationTests         : Started ChargelineApplicationTests in 1.288 seconds (JVM running for 1.836)
+2019-02-15 11:52:01.524  INFO 17660 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-15 11:52:16.169  INFO 16656 --- [main] c.t.chargeline.ChargelineApplication     : Starting ChargelineApplication on DESKTOP-VM20JAI with PID 16656 (E:\code\java\chargeline\target\classes started by keer in E:\code\java\chargeline)
+2019-02-15 11:52:16.172  INFO 16656 --- [main] c.t.chargeline.ChargelineApplication     : No active profile set, falling back to default profiles: default
+2019-02-15 11:52:16.828  INFO 16656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-02-15 11:52:16.841  INFO 16656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-15 11:52:16.841  INFO 16656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-02-15 11:52:16.845  INFO 16656 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files\Java\jdk1.8.0_191\bin;D:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\Program Files\Git\cmd;D:\Go\bin;E:\php iis;D:\apache-maven-3.6.0\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Users\keer\AppData\Local\Microsoft\WindowsApps;C:\Users\keer\go\bin;D:\Users\keer\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;.]
+2019-02-15 11:52:16.913  INFO 16656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-15 11:52:16.913  INFO 16656 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 712 ms
+2019-02-15 11:52:16.942  INFO 16656 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.web3_url
+2019-02-15 11:52:16.942  INFO 16656 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.ChargingLine_address
+2019-02-15 11:52:17.027  INFO 16656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-15 11:52:17.127  INFO 16656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-02-15 11:52:17.129  INFO 16656 --- [main] c.t.chargeline.ChargelineApplication     : Started ChargelineApplication in 1.161 seconds (JVM running for 1.606)
+2019-02-15 11:52:35.331  INFO 16656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-15 11:52:35.331  INFO 16656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-15 11:52:35.334  INFO 16656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-02-15 11:52:50.698  INFO 16656 --- [http-nio-8080-exec-1] c.t.c.controller.ScanController          : 增加扫描信息成功: IP:58.246.141.34; macvalue:11:23:11:12:12:AB; date:2019-02-15 11:52:35
+2019-02-15 11:52:55.801  INFO 16656 --- [http-nio-8080-exec-3] c.t.c.controller.ScanController          : 成功获取信息总数：1
