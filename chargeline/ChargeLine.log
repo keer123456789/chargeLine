@@ -1,0 +1,32 @@
+2019-02-18 14:18:06.495  WARN 14332 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/keer/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/keer/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2019-02-18 14:18:06.507  INFO 14332 --- [main] c.t.c.ChargelineApplicationTests         : Starting ChargelineApplicationTests on DESKTOP-VM20JAI with PID 14332 (started by keer in E:\code\java\chargeline)
+2019-02-18 14:18:07.105  INFO 14332 --- [main] c.t.c.ChargelineApplicationTests         : No active profile set, falling back to default profiles: default
+2019-02-18 14:18:07.639  INFO 14332 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.web3_url
+2019-02-18 14:18:07.639  INFO 14332 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.ChargingLine_address
+2019-02-18 14:18:07.975  INFO 14332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 14:18:08.163  INFO 14332 --- [main] c.t.c.ChargelineApplicationTests         : Started ChargelineApplicationTests in 1.823 seconds (JVM running for 2.363)
+2019-02-18 14:18:08.313  INFO 14332 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-18 15:03:46.694  WARN 13776 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/keer/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/keer/.m2/repository/org/json/json/20160810/json-20160810.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2019-02-18 15:03:46.710  INFO 13776 --- [main] c.t.c.ChargelineApplicationTests         : Starting ChargelineApplicationTests on DESKTOP-VM20JAI with PID 13776 (started by keer in E:\code\java\chargeline)
+2019-02-18 15:03:46.710  INFO 13776 --- [main] c.t.c.ChargelineApplicationTests         : No active profile set, falling back to default profiles: default
+2019-02-18 15:03:47.256  INFO 13776 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.web3_url
+2019-02-18 15:03:47.256  INFO 13776 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.trustchain.chargeline.controller.AllController.ChargingLine_address
+2019-02-18 15:03:47.646  INFO 13776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-18 15:03:47.818  INFO 13776 --- [main] c.t.c.ChargelineApplicationTests         : Started ChargelineApplicationTests in 1.273 seconds (JVM running for 1.831)
+2019-02-18 15:03:47.983  INFO 13776 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
