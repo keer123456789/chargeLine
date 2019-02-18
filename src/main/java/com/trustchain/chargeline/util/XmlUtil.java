@@ -15,22 +15,23 @@ import java.util.Map;
 public class XmlUtil {
     /**
      * 将请求中的xml信息装换成map
+     *
      * @param request
      * @return
      * @throws IOException
      * @throws DocumentException
      */
-    public static Map<String, String> xmlToMap(HttpServletRequest request) throws IOException, DocumentException
-    {
+    public static Map<String, String> xmlToMap(HttpServletRequest request) throws IOException, DocumentException, InterruptedException {
         HashMap<String, String> map = new HashMap();
         SAXReader reader = new SAXReader();
         InputStream ins = request.getInputStream();
+
         Document doc = reader.read(ins);
         Element root = doc.getRootElement();
         List<Element> list = root.elements();
 
         for (Element e : list) {
-        map.put(e.getName(), e.getText());
+            map.put(e.getName(), e.getText());
         }
         ins.close();
         return map;
