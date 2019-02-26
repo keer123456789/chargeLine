@@ -21,6 +21,7 @@ import org.web3j.tx.gas.DefaultGasProvider;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;
+import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -36,16 +37,17 @@ public class ScanController {
      *
      * @param code
      * @param macvalue
-     * @param ipaddress
+     * @param request
      * @return
      */
     @RequestMapping({"/setMacValue"})
     @ResponseBody
-    public JsonResult addInfo(String code, String macvalue, String ipaddress) {
+    public JsonResult addInfo(String code, String macvalue,HttpServletRequest request) {
         JsonResult jsonResult = new JsonResult();
         Scan scan = contractUtil.ScanLoad();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date = df.format(new Date());
+        String ipaddress=getIpAddr(request);
         try {
             TransactionReceipt receipt = scan.AddInfo(ipaddress, macvalue, date).send();
             jsonResult.setMessage("successful!!!");
@@ -112,6 +114,31 @@ public class ScanController {
     }
 
     /**
+     * 获得扫码总数
+     * @return
+     */
+    @RequestMapping(value = {"/getCountScan"}, method = {RequestMethod.GET})
+    @ResponseBody
+    public JsonResult getCountScan(){
+        JsonResult jsonResult= new JsonResult();
+        Scan scan = contractUtil.ScanLoad();
+        BigInteger total = null;
+        try {
+            total = scan.getInfoTotal().send();
+            logger.info("成功获取信息总数：" + total);
+            jsonResult.setState(JsonResult.SUCCESS);
+            jsonResult.setMessage("成功获取信息总数：" + total);
+            jsonResult.setData(total);
+            return jsonResult;
+        } catch (Exception e) {
+            logger.error("获取信息总数失败");
+            jsonResult.setState(JsonResult.ERROR);
+            jsonResult.setMessage("获取充电线总户数失败");
+            return jsonResult;
+        }
+    }
+
+    /**
      * 增加粉丝
      *
      * @param request
@@ -156,6 +183,10 @@ public class ScanController {
         }
     }
 
+    /**
+     * 获得全部粉丝信息
+     * @return
+     */
     @RequestMapping(value = {"/getAllFriendInfo"}, method = {RequestMethod.GET})
     @ResponseBody
     public JsonResult getAllFriendInfo(){
@@ -199,8 +230,67 @@ public class ScanController {
         jsonResult.setState(JsonResult.SUCCESS);
         jsonResult.setData(data);
         return jsonResult;
+    }
 
-
+    /**
+     * 获得粉丝总数
+     * @return
+     */
+    @RequestMapping(value = {"/getCountFriend"}, method = {RequestMethod.GET})
+    @ResponseBody
+    public JsonResult getCountFriend(){
+        JsonResult jsonResult=new JsonResult();
+        Friend friend = contractUtil.FriendLoad();
+        //获取信息的总数
+        BigInteger total = null;
+        try {
+            total = friend.getFriendTotal().send();
+            logger.info("粉丝总数：" + total);
+            jsonResult.setData(total);
+            jsonResult.setMessage("粉丝总数：" + total);
+            jsonResult.setState(JsonResult.SUCCESS);
+            return jsonResult;
+        } catch (Exception e) {
+            logger.error("获取粉丝总数失败");
+            jsonResult.setState(JsonResult.ERROR);
+            jsonResult.setMessage("获取粉丝总数失败");
+            return jsonResult;
+        }
+    }
+    /**
+     * 获取请求IP
+     *
+     * @param request
+     * @return
+     */
+    private String getIpAddr(HttpServletRequest request) {
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+            if (ip.equals("127.0.0.1")) {
+                //根据网卡取本机配置的IP
+                InetAddress inet = null;
+                try {
+                    inet = InetAddress.getLocalHost();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ip = inet.getHostAddress();
+            }
+        }
+        // 多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割
+        if (ip != null && ip.length() > 15) {
+            if (ip.indexOf(",") > 0) {
+                ip = ip.substring(0, ip.indexOf(","));
+            }
+        }
+        return ip;
     }
 
     public static void main(String[] args) throws Exception {
