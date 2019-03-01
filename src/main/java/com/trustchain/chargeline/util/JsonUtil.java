@@ -1,16 +1,30 @@
 package com.trustchain.chargeline.util;
 
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONReader;
 import com.alibaba.fastjson.JSONWriter;
+import com.trustchain.chargeline.domain.JsonResult;
+import com.trustchain.chargeline.solidity.Friend.Friend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.web3j.tuples.generated.Tuple5;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-
+import java.math.BigInteger;
+import java.text.ParseException;
+import java.util.HashMap;
+import java.util.Map;
+@Component
 public class JsonUtil {
+
+    @Autowired
+    ContractUtil contractUtil;
     protected static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);
 
     public static boolean writeFile(Object object) {
@@ -32,27 +46,39 @@ public class JsonUtil {
                 return false;
             }
         }
+        logger.info("写入成功");
         return true;
     }
 
-    public static JSONArray readFile(String path) {
+    /**
+     * 读文件
+     *
+     * @param path
+     * @return
+     */
+    public static JSONObject readFile(String path) {
         JSONReader reader = null;
         try {
             reader = new JSONReader(new FileReader(path));
         } catch (FileNotFoundException e) {
-            logger.info("系统中找不到指定文件，path："+path);
+            logger.info("系统中找不到指定文件，path：" + path);
             return null;
         }
         reader.startArray();
-        JSONArray jsonArray = new JSONArray();
+        JSONObject jsonObject = new JSONObject();
         while (reader.hasNext()) {
-            jsonArray = reader.readObject(JSONArray.class);
+            jsonObject = reader.readObject(JSONObject.class);
 
         }
         reader.endArray();
         reader.close();
-        return jsonArray;
+        return jsonObject;
 
     }
 
+
+
+    public static void main(String[] args) throws ParseException {
+
+    }
 }

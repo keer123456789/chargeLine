@@ -22,7 +22,7 @@ public class Autobuild {
     @Autowired
     ContractUtil contractUtil;
 
-    @Scheduled(cron = "0 0 3 * * ?")
+    @Scheduled(cron="0 0 3 * * ? ")
     public void scheduled() {
         Scan scan = contractUtil.ScanLoad();
         BigInteger total = null;
@@ -91,11 +91,13 @@ public class Autobuild {
         map.put("friendInfo",friendInfo);
 
         JsonUtil.writeFile(map);
+        logger.info("json文件写入成功！！！");
 
     }
 
 
     public static void main(String[] args) {
-
+        Autobuild autobuild=new Autobuild();
+        autobuild.scheduled();
     }
 }
