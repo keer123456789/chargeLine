@@ -93,7 +93,7 @@ public class ShowController {
         JSONArray friendArray = showService.getInfo("./JsonData/2.json","friendInfo");
         int[] sumFriend = new int[7];
         for (int i=0;i<friendArray.size();i++) {
-            JSONObject jsonObject= (JSONObject) friendArray.get(i);
+            Map jsonObject= (Map) friendArray.get(i);
             if (TimeUtil.getLastTimeInterval(jsonObject.get("date").toString()) == 1) {
                 sumFriend[0]++;
             }
@@ -120,7 +120,7 @@ public class ShowController {
         JSONArray scanArray = showService.getInfo("./JsonData/2.json","scanInfo");
         int[] sumscan = new int[7];
         for (int i=0;i<scanArray.size();i++) {
-            JSONObject jsonObject= (JSONObject) scanArray.get(i);
+            Map jsonObject= (Map) scanArray.get(i);
             if (TimeUtil.getLastTimeInterval(jsonObject.get("date").toString()) == 1) {
                 sumscan[0]++;
             }
