@@ -31,16 +31,16 @@ public class ShowController {
         JSONArray friendArray = showService.getInfo("./JsonData/1.json","friendInfo");
         int friendTotalYest = 0;
         for (int i=0;i<friendArray.size();i++) {
-            JSONObject jsonObject= (JSONObject) friendArray.get(i);
+            Map jsonObject= (Map) friendArray.get(i);
             if (TimeUtil.getCurrentTime(jsonObject.get("date").toString())) {
                 friendTotalYest++;
             }
-            logger.info(i+"")   ;
+//            logger.info(i+"")   ;
         }
         JSONArray scanArray = showService.getInfo("./JsonData/1.json","scanInfo");
         int scanTotalYest = 0;
         for (int i=0;i<scanArray.size();i++) {
-            JSONObject jsonObject= (JSONObject) scanArray.get(i);
+            Map jsonObject= (Map) scanArray.get(i);
             if (TimeUtil.getCurrentTime(jsonObject.get("date").toString())) {
                 scanTotalYest++;
             }
@@ -51,6 +51,7 @@ public class ShowController {
         data.put("friendtotal", friendArray.size() + "");
         data.put("yesterdayFriend", friendTotalYest + "");
 
+        logger.info(data.toString());
         jsonResult.setState(JsonResult.SUCCESS);
         jsonResult.setData(data);
         return jsonResult;
